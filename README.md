@@ -1,7 +1,7 @@
 # Plot.ly_Challenge_Belly_Button_Biodiversity
 
 ## Step 1: Plotly
-Reqirements:
+Requirements:
 1. Use D3 library to read in samples
 
 2. Create Horizontal bar chart with a dropdown menu to display the top 10 OTU's found in that individual/
@@ -20,4 +20,4 @@ Reqirements:
   
   5. Display each key-value pair from the metada JSON object somewhere on the page.
   
-  6. update all the plots any time a new sample is selected.
+  6. Update all the plots any time a new sample is selected.
