@@ -6,6 +6,15 @@ d3.json('data/samples.json').then((samples)) => {
     console.log(samples);
  
 };
+// Once data is loaded will need to create variable for loaded data
+
+// then add data to drop down so user can dynamically adjust the charts Day 2 activity 7
+
+// initialize the page with default charts Day 2 Activity 8,9
+// function init() 
+
+
+
 
 // Step 2 - Create a horizontal bar chart with a dropdown menu to display the top 10 OTUs found in that individual.
 // Use sample_values as the values for the bar chart
