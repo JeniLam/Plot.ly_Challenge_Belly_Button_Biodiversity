@@ -15,10 +15,21 @@ d3.json('samples.json').then((samples => console.log(samples)));
 // initialize the page with default charts Day 2 Activity 8,9 - use subject 940 to populate
 // then add data to drop down so user can dynamically adjust the charts Day 2 activity 7  
 // use selDataset for id
-// function init() 
+function init(){
+    var selector = d3.select("selDataset");
+        //Grab values from samples.json 
+        d3.json("samples.json").then((sample) => {
+            var sampleIDNames = sample.names;
+            console.log("IDs ", sampleIDNames);
+            sampleIDNames.forEach((entry) => {
+                selector.append("option").text(entry).property("value");
+            })
+            //build chart with first id name
+            buildPlot(sampleIDNames[0]);
+        });
+    };
 
-
-
+init();
 
 // Step 2 - Create a horizontal bar chart with a dropdown menu to display the top 10 OTUs found in that individual.
 // Use sample_values as the values for the bar chart
