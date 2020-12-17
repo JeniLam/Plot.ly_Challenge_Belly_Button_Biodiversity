@@ -1,8 +1,12 @@
 .col-md-12 {
-    background-color:rgb(194, 138, 247);
+    background-color:rgb(29, 92, 207);
     font-size: 40px;
-}
+    }
 
 body {
     background-color: lightgray;
+}
+h1 {
+    color: white;
+    text-align: center;
 }
