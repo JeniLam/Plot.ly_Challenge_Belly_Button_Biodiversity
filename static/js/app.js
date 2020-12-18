@@ -38,12 +38,41 @@ d3.json('samples.json').then((data) => {
     var data = [trace1];
 
     var layout = {
-        xaxis: {title: "Sample Values"},
-        yaxis: {title: "out-ids"}
+        xaxis: { title: "Sample Values" },
+        yaxis: { title: "out-ids" }
     };
 
     Plotly.newPlot("bar", data, layout);
 
+    // create bubble chart
+    // https://plotly.com/javascript/bubble-charts/#hover-text-on-bubble-charts
+    // Use otu_ids for the x values.
+    // Use sample_values for the y values.
+    // Use sample_values for the marker size.
+    // Use otu_ids for the marker colors.
+    // Use otu_labels for the text values
+
+    var trace2 = {
+        x: labels,
+        y: sampleValues,
+        text: hover,
+        mode: "markers",
+        marker: {
+            color: labels,
+            size: sampleValues,
+        }
+    };
+
+    var bubbleData = [trace2];
+
+    var bubbbleLayout = {
+        title: "Bubble Chart",
+        xaxis: { title: "OTU ID" },
+        yaxis: { title: "Sample Values" },
+        showlegend: false
+    };
+
+    Plotly.newPlot("bubble", bubbleData, bubbbleLayout);
 
 
 
