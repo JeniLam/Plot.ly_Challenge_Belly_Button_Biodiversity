@@ -1,0 +1,30 @@
+// Step 1 - Use the D3 library to read in samples.json. Day 3 activity 6
+// need python -m http.server to load in data locally
+// http://localhost:8000/index.html
+var globalsamples;
+// Get subject names into dropdown
+d3.json('samples.json').then((data) => {
+    console.log(data);
+    // samples= {id: "940", otu_ids: Array(80), sample_values: Array(80), otu_labels: Array(80)}
+    // grab sample ids
+    var mysample = data.filter(item => item.id === "940")[0]
+
+    var barValues = mysample.sample_values;
+
+    console.log(barValues);
+
+    var barLabels = data.filter(item => item.id === "940")[0].otu_ids;
+
+    console.log(barLabels);
+
+    // use d3 to add test subject ID to drop down (need to loop through using forEach to get all in)
+    var names = data.names;
+    // https://alignedleft.com/tutorials/d3/binding-data/
+    names.forEach((name) => {
+        d3.select("#selDataset").append("option").text(name);
+    });
+
+});
+
+// https://stackoverflow.com/questions/46894352/filtering-an-array-of-objects-based-on-another-array-in-javascript
+

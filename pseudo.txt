@@ -1,0 +1,21 @@
+[x]  read from json
+[]  create horizontal bar Chart with dropdown menu to display the top 10 OTU-Id's
+[]  grab element "bar" for plotly to use
+[]  take one name to filter the samples, use labels and values to create the graph
+[]  sample_values = values
+[]  otu_ids = labels
+[] otu_labels = hover text
+
+[]  create bubble chart
+[]  grab "bubble" element for plotly to use
+[] Use otu_ids for the x values.
+[] Use sample_values for the y values.
+[] Use sample_values for the marker size.
+[] Use otu_ids for the marker colors.
+[] Use otu_labels for the text values
+
+[] display metadata
+
+var mysample = globalsamples.filter(item => item.id ==="940")[0].sample_values
+
+mysample.otu_ids
