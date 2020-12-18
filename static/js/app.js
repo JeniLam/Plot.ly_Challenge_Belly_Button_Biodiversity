@@ -76,10 +76,35 @@ d3.json('samples.json').then((data) => {
 
 
 
-    // use d3 to add test subject ID to drop down (need to loop through using forEach to get all in)
+});
+
+// use d3 to add test subject ID to drop down (need to loop through using forEach to get all in)
+
+d3.json('samples.json').then((data) => {
     var names = data.names;
     // https://alignedleft.com/tutorials/d3/binding-data/
     names.forEach((name) => {
         d3.select("#selDataset").append("option").text(name);
     });
+});
+
+d3.json('samples.json').then((data) => {
+    // Demographic info
+    //"metadata":[{"id": 940, "ethnicity": "Caucasian", "gender": "F", "age": 24.0, 
+    //"location": "Beaufort/NC", "bbtype": "I", "wfreq": 2.0}
+
+    var metadata = data.metadata;
+    console.log("MetaData", metadata);
+
+    var filteredMetaData = metadata.filter(m => m.id === "940");
+    console.log("Filtered Meta", filteredMetaData);
+
+    var panel = d3.select("#sample-metadata");
+    console.log(panel);
+
+    panel.html("");
+    Object.entries(filteredMetaData).forEach(([key, value]) => {
+        var cell = panel.append("div");
+        cell.text(value);
+      });
 });
