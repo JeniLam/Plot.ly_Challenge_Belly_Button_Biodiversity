@@ -22,7 +22,7 @@ d3.json('samples.json').then((data) => {
     var labels = samples.filter(item => item.id === "940")[0].otu_ids;
     console.log("OTU-IDS", labels);
 
-    var top10Labels = labels.slice(0, 10);
+    var top10Labels = labels.slice(0, 10).reverse();
     console.log("OTU Labels", top10Labels);
 
     var hover = samples.filter(item => item.id === "940")[0].otu_labels;
