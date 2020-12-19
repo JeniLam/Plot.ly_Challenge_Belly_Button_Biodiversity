@@ -104,7 +104,7 @@ d3.json('samples.json').then((data) => {
     panel.html("");
     Object.entries(filteredMetaData).forEach(([key, value]) => {
         var cell = panel.append("div");
-        cell.text(`${key}, ${value}`);
+        cell.text(`${key}:${value}`);
     });
 });
 
