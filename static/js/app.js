@@ -66,8 +66,7 @@ d3.json('samples.json').then((data) => {
     var bubbleData = [trace2];
 
     var bubbbleLayout = {
-        title: "Bubble Chart",
-        xaxis: { title: "OTU ID" },
+         xaxis: { title: "OTU ID" },
         yaxis: { title: "Sample Values" },
         showlegend: false
     };
