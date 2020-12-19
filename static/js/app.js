@@ -16,7 +16,7 @@ d3.json('samples.json').then((data) => {
     var sampleValues = samples.filter(item => item.id === "940")[0].sample_values;
     console.log("Sample Values", sampleValues);
 
-    var top10samples = sampleValues.slice(0, 10);
+    var top10samples = sampleValues.slice(0, 10).reverse();
     console.log("Bar Chart Values", top10samples);
 
     var labels = samples.filter(item => item.id === "940")[0].otu_ids;
@@ -36,17 +36,13 @@ d3.json('samples.json').then((data) => {
         type: "bar",
         orientation: "h",
         x: top10samples,
-        y: top10Labels,
+        y: top10Labels.map(otu_ids => `OTU ${otu_ids}`),
     };
 
     var data = [trace1];
 
-    var layout = {
-        xaxis: { title: "Sample Values" },
-        yaxis: { title: "out-ids" }
-    };
 
-    Plotly.newPlot("bar", data, layout);
+    Plotly.newPlot("bar", data);
 
     // create bubble chart
     // https://plotly.com/javascript/bubble-charts/#hover-text-on-bubble-charts
